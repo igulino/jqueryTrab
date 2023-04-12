@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>Exibir e Ocultar Texto profissional</title>
+    <link href="src/style.css" rel="stylesheet" type="text/css" media="screen" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="container">
+        <h1>Faetec cursos online - Design III</h1>
+        <div id="texto">
+            <div>
+                <h2>O que é Jquery</h2>
+                    <p>jQuery é uma biblioteca JavaScript desenvolvida para simplificar os scripts client side que interagem com o HTML. </p>
+                    <p>Usada por cerca de 41% dos 10 mil sites mais visitados do mundo, jQuery é a mais popular das bibliotecas JavaScript de código aberto.</p>
+                <h2>Funcionalidades</h2>
+                    <ul>
+                        <li> Resolução da incompatibilidade entre os navegadores. </li>
+                        <li> Redução e reutilização de código. </li>
+                        <li> Utilização de uma vasta quantidade de plugins criados por outros desenvolvedores.</li>
+                        <li> Trabalha com AJAX e DOM. </li>
+                        <li> Implementação segura de recursos do CSS1, CSS2 e CSS3. </li>
+                    </ul>
+                <h2>Avaliação do código</h2>
+                    <ol>
+                        <li> questão 1: eu utilizei o fadeIn na linha 15 e o fadeOut na linha 11 que diminui a opacidade do elemento selecionado.</li>
+                        <li> questão 2: duration, e eu não utilizei ele.</li>
+                        <li> questão 3: ele muda o tamanho do elemento, foi utilizado para aumentar o #texto.</li>
+                        <li> questão 4: define propriedades do css que serão executadas durante a animação. Foi utilizado nas linhas 9 e 13. Serviu durante o processo de animação.</li>
+                    </ol>
+            </div>
+        </div>
+        <div id="gradient"></div>
+        <div id="read-more"></div>
+    <script type="text/javascript">
+    $(function() {
+        var slideHeight = 175; 
+        var defHeight = $('#texto').height();
+        if(defHeight >= slideHeight) {
+            $('#texto').css('height' , slideHeight + 'px');
+            $('#read-more').append('<a href="#">Clique para continuar lendo</a>');
+            $('#read-more a').click(function () {
+                var curHeight = $('#texto').height();
+                if(curHeight == slideHeight) {
+                    $('#texto').animate({height:defHeight}, "normal");
+                    $('#read-more a').html('Fechar');
+                    $('#gradient').fadeOut()}else {
+                    $('#texto').animate({height:slideHeight}, "normal");
+                    $('read-more a').html('Clique para continuar lendo');
+                    $('#gradient').fadeIn()
+                }
+                return true;
+            });   
+        };
+    });</script>
+  </body>
+</html>
