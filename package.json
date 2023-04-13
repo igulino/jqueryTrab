@@ -1,0 +1,14 @@
+{
+  "name": "calctrabltp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "expo-cli": "^6.3.2"
+  }
+}
